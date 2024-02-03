@@ -15,6 +15,8 @@ async fn main() {
     tracing_subscriber::fmt::init();
 
     info!("Initializing Rustversi on Launchpad Mini Mk3...");
+    info!("Rules: https://en.wikipedia.org/wiki/Reversi");
+    info!("Press User to pass a turn");
 
     let mut controllers: Vec<Arc<Box<dyn Alles>>> = Vec::new();
 

@@ -25,8 +25,8 @@ impl Script for PingScript {
                 .display()
                 .with_format(magpie::othello::Format::Compact)
                 .to_string();
-            let mut black = 0;
-            let mut white = 0;
+            let mut black: u8 = 0;
+            let mut white: u8 = 0;
 
             for line in original_string.lines().skip(2).take(8) {
                 let new_line = line.replace("|", "");
@@ -37,11 +37,10 @@ impl Script for PingScript {
                         } else if c.to_string() == "B" {
                             black += 1;
                         }
+                        info!("Black: {}, White: {}", black, white);
                     }
                 }
             }
-
-            info!("Black: {}, White: {}", black, white);
 
         }
     }
