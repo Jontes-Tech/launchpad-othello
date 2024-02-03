@@ -17,6 +17,7 @@ async fn main() {
     info!("Initializing Rustversi on Launchpad Mini Mk3...");
     info!("Rules: https://en.wikipedia.org/wiki/Reversi");
     info!("Press User to pass a turn");
+    info!("Press Session to count points");
 
     let mut controllers: Vec<Arc<Box<dyn Alles>>> = Vec::new();
 

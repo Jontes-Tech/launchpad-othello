@@ -20,7 +20,7 @@ impl Script for PingScript {
             let _ = self.game.pass_turn();
             self.initialize(_controller);
         }
-        if index == 5 {
+        if index == 4 {
             let original_string = self.game
                 .display()
                 .with_format(magpie::othello::Format::Compact)
@@ -37,10 +37,10 @@ impl Script for PingScript {
                         } else if c.to_string() == "B" {
                             black += 1;
                         }
-                        info!("Black: {}, White: {}", black, white);
                     }
                 }
             }
+            info!("Yellow: {}, Red: {}", black, white);
 
         }
     }
@@ -66,7 +66,6 @@ impl Script for PingScript {
                 .board()
                 .is_legal_move(self.game.current_turn(), pos)
             {
-                println!("Legal move");
                 let _ = self.game.play(pos);
                 self.initialize(_controller);
             } else {
@@ -121,7 +120,6 @@ impl Script for PingScript {
                 index += 1;
             }
         }
-        info!("Redrawing board");
     }
 }
 fn get_coordinates(index: usize) -> (usize, usize) {
